@@ -15,7 +15,7 @@ const Index = () => {
 
     // Simulate bot response
     setTimeout(() => {
-      const botMessage = { text: "Thank you for your message! How can I assist you further?", sender: "bot" };
+      const botMessage = { text: "Obrigado pela sua mensagem! Como posso ajudá-lo ainda mais?", sender: "bot" };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     }, 1000);
   };
@@ -23,7 +23,7 @@ const Index = () => {
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4} width="100%">
-        <Text fontSize="2xl">Lead Generation Chatbot</Text>
+        <Text fontSize="2xl">Chatbot de Geração de Leads</Text>
         <Box borderWidth="1px" borderRadius="lg" padding={4} width="100%" height="400px" overflowY="auto">
           {messages.map((message, index) => (
             <Box key={index} alignSelf={message.sender === "user" ? "flex-end" : "flex-start"} bg={message.sender === "user" ? "blue.100" : "gray.100"} borderRadius="md" padding={2} marginY={1}>
@@ -32,7 +32,7 @@ const Index = () => {
           ))}
         </Box>
         <HStack width="100%">
-          <Input placeholder="Type your message..." value={input} onChange={(e) => setInput(e.target.value)} />
+          <Input placeholder="Digite sua mensagem..." value={input} onChange={(e) => setInput(e.target.value)} />
           <IconButton aria-label="Send" icon={<FaPaperPlane />} onClick={handleSend} />
         </HStack>
       </VStack>
